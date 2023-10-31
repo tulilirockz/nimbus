@@ -2,7 +2,7 @@ FROM registry.fedoraproject.org/fedora:rawhide AS nimbus
 
 COPY pkgs /pkgs
 
-RUN dnf install -y 'dnf-command(copr)' dnf-plugins-core $(</pkgs/main) $(</pkgs/extra) && \
+RUN dnf install -y 'dnf-command(copr)' dnf-plugins-core $(</pkgs/base) $(</pkgs/extra) && \
     dnf copr enable atim/nushell && \
     dnf copr enable atim/lazygit && \
     dnf install -y nushell lazygit
