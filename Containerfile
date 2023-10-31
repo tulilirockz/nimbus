@@ -15,11 +15,11 @@ RUN git clone https://github.com/89luca89/distrobox.git --single-branch /tmp/dis
     rm -drf /tmp/distrobox
 
 # Set up cleaner Distrobox integration
-RUN dnf copr enable -y kylegospo/distrobox-utils && \
-    dnf install -y \
-        xdg-utils-distrobox \
-        adw-gtk3-theme && \
-    ln -s /usr/bin/distrobox-host-exec /usr/bin/flatpak
+#RUN dnf copr enable -y kylegospo/distrobox-utils && \
+#    dnf install -y \
+#        xdg-utils-distrobox \
+#        adw-gtk3-theme && \
+#    ln -s /usr/bin/distrobox-host-exec /usr/bin/flatpak
 
 # Install RPMFusion for hardware accelerated encoding/decoding
 RUN dnf install -y \
