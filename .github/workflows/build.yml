@@ -1,7 +1,7 @@
-name: Build Fedora-Distrobox
+name: Build Nimbus 
 on:
   schedule:
-    - cron: '20 18 * * *'  # 8:20pm everyday
+    - cron: '0 0 1 * *'  # 8:20pm everyday
   pull_request:
     branches:
       - main
@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        base_name: [fedora-distrobox]
+        base_name: [nimbus]
         include:
           - is_latest_version: true
             is_stable_version: true
@@ -95,8 +95,8 @@ jobs:
           labels: |
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
-            org.opencontainers.image.description=These images are not meant to be used as a host operating system. Please see fedora-distrobox for more information.
-            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/ublue-os/fedora-distrobox/main/README.md
+            org.opencontainers.image.description=These images are not meant to be used as a host operating system. Please see nimbus for more information.
+            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/tulilirockz/nimbus/main/README.md
 
       # Build image using Buildah action
       - name: Build Image
