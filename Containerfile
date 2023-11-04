@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/fedora-distrobox:latest AS nimbus
+FROM registry.fedoraproject.org/fedora:rawhide AS nimbus 
 
 COPY system_files /
 
